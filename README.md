@@ -1,8 +1,11 @@
 # UR5_ROBOTIQ85_PICKNPLACE
 
 NOTES:  
-- There are issues documented about MoveIt generated packagea and gazebo about the controllers.  I tried a considerable time to fix it but without no result
-- Probably i will be implementing 
+- First, this repo is not working at all.
+- There are issues documented about MoveIt generated packages and gazebo about the controllers.  I tried a considerable time to fix it but without no result.
+- Currently I load the controllers but it says there are no controllers loaded for the controller_manager and move_group/controller_list has it.
+- Another idea that i have as a workaround is to use moveit to generate the robot srdf and use the configurations of the ur5 and robotiq to get the simulation to work.
+- Probably i will be implementing this same picknplace application with the Panda arm because is well documented. 
 
 
 <details open>
@@ -78,7 +81,7 @@ Below an image example of the outcome after the command:
 
 
 
-<details open>
+<details closed>
 <summary> <b>Results<b></summary>
 
 You could see the results on this youtube video.  
@@ -91,7 +94,7 @@ No video will be posted until it works completely
 
 </details>
 
-<details open>
+<details closed>
 <summary> <b>Video Explanation<b></summary>
 
 <p align="center">
@@ -105,7 +108,7 @@ No video will be posted until it works completely
 <details open>
 <summary> <b>Issues<b></summary>
 
-- MoveIt configuration generates the package
+- demo_gazebo.launch executes correctly, but when you try to control the arm and gripper the execution fails.
 
 </details>
 
