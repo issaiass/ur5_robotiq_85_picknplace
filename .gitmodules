@@ -1,0 +1,6 @@
+[submodule "ur5_sample_moveit_config"]
+	path = ur5_sample_moveit_config
+	url = https://github.com/issaiass/ur5_sample_moveit_config.git
+[submodule "ur5_picknplace"]
+	path = ur5_picknplace
+	url = https://github.com/issaiass/ur5_picknplace.git
