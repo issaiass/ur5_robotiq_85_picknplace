@@ -21,7 +21,7 @@ I based the structure of this repository using [Stanley Automation RobotIQ85](ht
 
 Below an image example of the outcome after the command:
 
-    roslaunch ur5_picknplace gripper_arm_rviz_MoveIt!_gazebo.launch world_name:='$(find ur5_picknplace)/worlds/ur5_floor_objects.world'
+    roslaunch ur5_picknplace gripper_arm_rviz_moveit_gazebo.launch world_name:='$(find ur5_picknplace)/worlds/ur5_floor_objects.world'
 
 <p align="center">
 <img src = "doc/imgs/ur5_robotiq85_world.PNG?raw=true" width="65%"/>
@@ -77,7 +77,7 @@ Below an image example of the outcome after the command:
 ~~~
 - For controlling using rviz MoveIt! and visualizing the movement in gazebo for the gripper and the arm
 ~~~
-    roslaunch ur5_picknplace gripper_arm_rviz_MoveIt!_gazebo.launch
+    roslaunch ur5_picknplace gripper_arm_rviz_moveit_gazebo.launch
 ~~~
 
 
@@ -121,8 +121,9 @@ Previous Videos
 
 <details open>
 <summary> <b>Future Work<b></summary>
-- :heavy_check_mark: Solved issue of the robotic arm not moving in gazebo
+
 - :x: Finish the worlds
+- :heavy_check_mark: Solved issue of the robotic arm not moving in gazebo
 
 </details>
 
