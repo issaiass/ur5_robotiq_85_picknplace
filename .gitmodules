@@ -4,3 +4,9 @@
 [submodule "ur5_picknplace"]
 	path = ur5_picknplace
 	url = https://github.com/issaiass/ur5_picknplace.git
+[submodule "ur5_robotiq_85_moveit_config"]
+	path = ur5_robotiq_85_moveit_config
+	url = https://github.com/issaias/ur5_robotiq_85_moveit_config.git
+[submodule "ur5_robotiq_85_simulation"]
+	path = ur5_robotiq_85_simulation
+	url = https://github.com/issaiass/ur5_robotiq_85_simulation.git
