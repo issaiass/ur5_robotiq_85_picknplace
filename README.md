@@ -18,7 +18,7 @@ At this point we only have the simulations of:
 - Using the UR5 and gripper as a standalone device in rviz with MoveIt! and check the execution in gazebo.
 - Viewing and using the UR5 and gripper in simulation and visualization using rviz, moveit, gazebo and also viewing the octomap. 
 
-I based the structure of this repository using [Stanley Automation RobotIQ85](https://github.com/StanleyInnovation/robotiq_85_gripper.git) and [UR5 from ROS-Industrial](https://github.com/ros-industrial/universal_robot.git). 
+I based the structure of this repository using [Stanley Automation RobotIQ85](https://github.com/StanleyInnovation/robotiq_85_gripper.git), the gazebo grasp plugin from [Jenifer Buehler](https://github.com/JenniferBuehler/gazebo-pkgs.git) and [UR5 from ROS-Industrial](https://github.com/ros-industrial/universal_robot.git).
 
 Below an image example of the outcome after the command:
 
@@ -28,8 +28,9 @@ Below an image example of the outcome after the command:
 
 
 <p align="center">
-<img src = "doc/imgs/picknplace_world.PNG?raw=true" width="65%"/>
-<img src = "doc/imgs/rviz_octomap.PNG?raw=true" width="65%"/>
+<img src = "doc/imgs/picknplace_world.PNG?raw=true" width="55%"/>
+<img src = "doc/imgs/rviz_octomap.PNG?raw=true" width="55%"/>
+<img src = "doc/imgs/planning_scene.PNG?raw=true" width="55%"/>
 </p>
 
 </details>
@@ -55,8 +56,9 @@ Below an image example of the outcome after the command:
 - Clone this repo in the `~/catkin_ws/src` folder by typing:
 ~~~ 
     cd ~/catkin_ws/src
-    git clone https://github.com/issaiass/ur5_robotiq85_picknplace --recursive
-    git clone https://github.com/StanleyInnovation/robotiq_85_gripper
+    git clone https://github.com/issaiass/ur5_robotiq85_picknplace.git --recursive
+    git clone https://github.com/StanleyInnovation/robotiq_85_gripper.git
+    git clone https://github.com/JenniferBuehler/gazebo-pkgs.git
     git clone https://github.com/ros-industrial/universal_robot.git
     cd ..
 ~~~
@@ -87,15 +89,26 @@ Below an image example of the outcome after the command:
     roslaunch ur5_picknplace ur5_picknplace.launch # same as above line
 ~~~
 
+- For loading the planning scene please ensure that the simulation is running and then
+~~~
+    rosrun ur5_picknplace planning_scene
+~~~
 
-<details closed>
+- For using the picknplace application (but still not working) please ensure that the simulation is running, then load the planning scene (see above node) and then
+~~~
+    rosrun ur5_picknplace ur5_picknplace
+~~~
+
+
+<details open>
 <summary> <b>Results<b></summary>
 
 You could see the results on this youtube video.  
 
 <p align="center">
 
-No video will be posted until it works completely
+UR5 RobotIQ Gripper Moveit 2 0   Planning Scene picknplace still not working
+[<img src= "https://img.youtube.com/vi/8HuyAWJQ9xw/0.jpg" />](https://youtu.be/8HuyAWJQ9xw)
 
 </p>
 
@@ -106,12 +119,13 @@ No video will be posted until it works completely
 
 <p align="center">
 
-Solution of the error of UR5 and RobotIQ Gripper with MoveIt! 2.0
-Part 2/2 - UR5 RobotIQ Gripper MoveIt! 2.0 - Unable to identify any set of controllers that can...
+Explaining UR5 RobotIQ Gripper Moveit 2 0   Planning Scene picknplace still not working
 
-[<img src= "https://img.youtube.com/vi/TcUmlq6eStg/0.jpg" />](https://youtu.be/TcUmlq6eStg)
+[<img src= "https://img.youtube.com/vi/3MIHn_RgWbU/0.jpg" />](https://youtu.be/3MIHn_RgWbU)
 
 Previous Videos
+
+[Part 2/2 - UR5 RobotIQ Gripper MoveIt! 2.0 - Unable to identify any set of controllers that can...](https://youtu.be/TcUmlq6eStg)
 
 [Part 1/2 - UR5 RobotIQ Gripper MoveIt! 2.0 - Unable to identify any set of controllers that can...](https://youtu.be/lGJM86NhGGQ)
 
@@ -122,15 +136,17 @@ Previous Videos
 <details open>
 <summary> <b>Issues<b></summary>
 
-- demo_gazebo.launch executes correctly, but when you try to control the arm and gripper the execution fails, this is documented and was solved as seen in video *Part 2/2 - UR5 RobotIQ Gripper MoveIt! 2.0 - Unable to identify any set of controllers that can...*.
 - If you have a compilation error its because the gazebo version and some functions.  Refer to [this issue](https://github.com/crigroup/robotiq/issues/4) to solve it.
+- arm plans but when gripper attach object it will not plan again because a collision between the tips and the object
 
 </details>
 
 <details open>
 <summary> <b>Future Work<b></summary>
 
-- :x: Finish the worlds
+- :x: Perception Filtering
+- :x: Better grasping method
+- :heavy_check_mark: Finish the worlds
 - :heavy_check_mark: Solved issue of the robotic arm not moving in gazebo
 
 </details>
